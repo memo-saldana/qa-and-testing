@@ -1,0 +1,10 @@
+
+codigo
+/*
+Lineas de
+
+comentarios multilinea
+*/
+mas codigo
+
+ultima linea de codigo

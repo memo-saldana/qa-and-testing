@@ -1,0 +1,5 @@
+// Son solo
+/*
+lineas con
+puros comentarios
+*/
