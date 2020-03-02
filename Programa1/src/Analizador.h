@@ -15,6 +15,7 @@ public:
     void imprimir();
 };
 
+//.i
 Analizador::Analizador()
 {
     blanco = 0;
@@ -23,6 +24,7 @@ Analizador::Analizador()
     archivoAnalizado = "";
 }
 
+//.i
 void Analizador::contarLineas(Lector &lector)
 {
     string linea;
@@ -63,6 +65,7 @@ void Analizador::contarLineas(Lector &lector)
     }
 }
 
+//.i
 void Analizador::imprimir()
 {
     cout<<"Nombre del archivo: "<< archivoAnalizado <<endl;
@@ -74,6 +77,7 @@ void Analizador::imprimir()
     cout<<"Cantidad total de líneas: "<< blanco + comentarios + codigo <<endl;
 }
 
+//.i
 bool Analizador::lineaEnBlanco(string linea)
 {
     for(char caracter : linea) {

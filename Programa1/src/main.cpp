@@ -2,6 +2,7 @@
 #include "Analizador.h"
 using namespace std;
 
+//.i
 int main()
 {
     Lector lector;

@@ -4,6 +4,8 @@
 #include <string>
 using namespace std;
 
+//.b=37
+
 class Lector
 {
 private:
@@ -13,35 +15,31 @@ public:
     bool fin();
     string getNombre();
     string getSigLinea();
-    Lector();
+    bool abrir(string nombre); //.m
     ~Lector();
 };
 
 //.i
-Lector::Lector()
+bool Lector::abrir(string nombre) //.m
 {
-    string nombrePotencial;
+    //.d=6
 
-    cout<<"Teclee el nombre del archivo junto con su terminación. (.txt, .cpp, .h, etc.)"<<endl;
-    getline(cin, nombrePotencial);
-
-    if (nombrePotencial == "")
-    {
-        throw runtime_error("Error de verificación: El nombre del archivo no puede estar vacío");
-    }
-
-    nombre = nombrePotencial;
     archivo.open(nombre);
 
     if (!archivo)
     {
-        throw runtime_error("Error de verificación: No existe un archivo con ese nombre");
+        cout<<"No existe un archivo con el nombre \""<< nombre <<  "\". Intente nuevamente.\n"; //.m
+        return false;
     }
 
     if (archivo.peek() == std::ifstream::traits_type::eof())
     {
-        throw runtime_error("Error de verificación: El archivo no puede estar vacío");
+        cout<<"El archivo con nombre \""<< nombre <<  "\" esta vacio, no se analizara.\n"; //.m
+        return false;
     }
+
+	this->nombre = nombre;
+    return true;
 }
 
 //.i
@@ -59,7 +57,9 @@ bool Lector::fin()
 //.i
 string Lector::getNombre()
 {
-    return this->nombre;
+	int i = this->nombre.find(".");
+	if(i == -1) return nombre;
+    return this->nombre.substr(0,i);
 }
 
 //.i
