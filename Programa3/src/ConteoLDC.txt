@@ -1,8 +1,10 @@
 PARTES BASE:
-	main:	T=64,	I=2,	B=9,	D=3,	M=0,	A=58
+	main:	T=93,	I=8,	B=64,	D=48,	M=5,	A=77
 --------------------------------------------
 PARTES NUEVAS:
+	Analizador:	T=23,	I=3
 --------------------------------------------
 PARTES REUSADAS:
+	Lector:	T=37,	I=5,	B=37
 --------------------------------------------
-Total de LDC=64
+Total de LDC=153
